@@ -1,9 +1,9 @@
 module Api
-  class ChangessController < ApplicationController::API
+  class ChangesController < ApplicationController::API
 
     def check
       # Grab 'changess' from query params (e.g., ?changess=63)
-      number = params[:changess].to_i
+      number = params[:changes].to_i
       
       # Call the private method logic
       status = calculate_status(number)
