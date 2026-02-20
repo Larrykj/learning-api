@@ -25,7 +25,9 @@ jobs:
         run: bin/brakeman --no-pager
 
       - name: Scan for known security vulnerabilities in gems used
-        run: bin/bundler-audit
+        run: |
+          bundle exec bundler-audit update
+          bin/bundler-audit
 
   scan_js:
     runs-on: ubuntu-latest
@@ -116,8 +118,7 @@ jobs:
           # RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           # REDIS_URL: redis://localhost:6379/0
         run: |
-          bin/rails db:create
-          bin/rails db:schema:load
+          bin/rails db:setup || bin/rails db:schema:load
           bin/rails test
 
   system-test:
@@ -162,9 +163,8 @@ jobs:
           # RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           # REDIS_URL: redis://localhost:6379/0
         run: |
-          bin/rails db:create
-          bin/rails db:schema:load
-          bin/rails test:system || echo "No system tests found - skipping"
+          bin/rails db:setup || bin/rails db:schema:load
+          bin/rails test:system || echo "No system tests - skipping"
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
