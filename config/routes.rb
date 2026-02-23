@@ -3,7 +3,5 @@ Rails.application.routes.draw do
     resources :changes
     get "/check", to: "changes#check"
     get "/process_string", to: "reversed_strings#process_string" # URL for handling the reversal of the string
-    get "/calculate_even", to: "revisions#calculate_even"
-    get "/book_title", to: "books#title"
   end
 end
