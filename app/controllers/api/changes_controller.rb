@@ -25,17 +25,6 @@ module Api
       }
     end
 
-    def convert
-      number = (params[:calculate_even] || params[:compute]).to_i
-      status = calculate_status(number)
-
-      render json: {
-        number: number,
-        status: status,
-        is_even: number.even?
-      }
-    end
-
     private
 
     # This method is hidden from the outside world (encapsulation)
