@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
     get "check", to: "changes#check"
     get "reverse", to: "changes#reverse"
-    get "convert", to: "changes#convert"
     get "calculate_even", to: "revisions#calculate_even"
     get "book_title", to: "books#title"
 
