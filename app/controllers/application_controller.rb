@@ -68,3 +68,4 @@ class ApplicationController < ActionController::API
     render json: { error: "Forbidden" }, status: :forbidden
   end
 end
+  end
