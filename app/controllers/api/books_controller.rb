@@ -78,6 +78,14 @@ class Api::BooksController < ApplicationController
     }
   end
 
+  def title
+    title = params[:title].to_s
+
+    render json: {
+      title: title
+    }
+  end
+
   private
 
   def set_book
@@ -87,15 +95,4 @@ class Api::BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :author)
   end
-end
-module Api
-    class BooksController < ApplicationController
-        def title
-            title = params[:title].to_s
-
-            render json: {
-                title: title
-            }
-        end
-    end
 end
