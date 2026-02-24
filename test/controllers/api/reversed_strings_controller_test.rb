@@ -2,6 +2,9 @@ require "test_helper"
 
 class Api::ReversedStringsControllerTest < ActionDispatch::IntegrationTest
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787f414 (Added Test Functionality)
   test "should return reversed string" do
     get "/api/process_string", params: { input_string: "Hello" }
     assert_response :success
@@ -17,9 +20,12 @@ class Api::ReversedStringsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "", json_response["original"]
     assert_equal "", json_response["reversed_string"]
   end
+<<<<<<< HEAD
 =======
   # test "the truth" do
   #   assert true
   # end
 >>>>>>> 1bd5bc9 (Reversal of string Hello into olleH)
+=======
+>>>>>>> 787f414 (Added Test Functionality)
 end
