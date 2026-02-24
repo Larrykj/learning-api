@@ -78,6 +78,10 @@ class Api::BooksController < ApplicationController
     }
   end
 
+  def title
+    render json: { title: params[:title].to_s }
+  end
+
   private
 
   def set_book
