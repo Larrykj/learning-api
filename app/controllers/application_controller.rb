@@ -35,7 +35,9 @@ class ApplicationController < ActionController::API
     unless ActiveSupport::SecurityUtils.secure_compare(api_key.to_s, expected)
       render json: { error: "Unauthorized – invalid or missing API key" }, status: :unauthorized
     end
-    def authenticate!
+  end
+
+  def authenticate!
     render json: { error: "Unauthorized" }, status: :unauthorized unless current_user
   end
 
@@ -66,4 +68,3 @@ class ApplicationController < ActionController::API
     render json: { error: "Forbidden" }, status: :forbidden
   end
 end
-  end
