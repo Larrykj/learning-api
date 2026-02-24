@@ -1,5 +1,5 @@
 module Api
-  class ChangesController < ApplicationController::API
+  class ChangesController < ApplicationController
     def check
       # Accept either ?changes=63 or ?calculate_status=63
       number = (params[:changes] || params[:calculate_status]).to_i
