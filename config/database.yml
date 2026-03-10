@@ -18,6 +18,9 @@ test:
   <<: *default
   database: learning_api_test
 
+# Multiple database config disabled for development—restore in production
+# See config/application.rb for secondary database setup
+
 # Store production database configuration
 production:
   primary:
