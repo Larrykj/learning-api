@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: one
+  car: one
+  ownership_start_date: 2026-03-03 18:53:25
+  ownership_end_date: 2026-03-03 18:53:25
+
+two:
+  owner: two
+  car: two
+  ownership_start_date: 2026-03-03 18:53:25
+  ownership_end_date: 2026-03-03 18:53:25

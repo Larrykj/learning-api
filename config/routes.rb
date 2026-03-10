@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     get "/calculate_even", to: "revisions#calculate_even"
     get "/book_title", to: "books#title"
     get "/array_sums", to: "array_sums#calculate_array_sum", as: :array_sums # Compute sum of array elements
+    post "/cars", to: "cars#create"
   end
 end
