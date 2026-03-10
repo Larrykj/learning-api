@@ -10,8 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_10_063501) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "cars", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "make"
+    t.string "model"
+    t.string "year"
+  end
 end
